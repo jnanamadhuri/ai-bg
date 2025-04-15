@@ -17,7 +17,6 @@ app.use(cors());
 // API ROUTES
 app.get("/", (req, res) => res.send("api working"));
 app.use("/api/user", userRouter);
+app.post("/api/user/webhooks", clerkWebhooks);
 
 app.listen(PORT, () => console.log("sever running on port" + PORT));
-
-app.post("/api/user/webhooks", clerkWebhooks);
