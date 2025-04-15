@@ -3,7 +3,6 @@ import express from "express";
 import cors from "cors";
 import connectDB from "./configs/mongodb.js";
 import { clerkWebhooks } from "./controllers/userController.js";
-import userRouter from "./routes/userRouters.js";
 
 // APP CONFIG
 
@@ -16,7 +15,6 @@ app.use(cors());
 
 // API ROUTES
 app.get("/", (req, res) => res.send("api working"));
-app.use("/api/user", userRouter);
 
 app.listen(PORT, () => console.log("sever running on port" + PORT));
 
